@@ -15,6 +15,9 @@ jobs:
       model: claude-opus-5-5
       effort: high
       verify: false
+      # Budget run (W13-W15): $10 per review instead of the $3 default, so that no batch of a
+      # large pull request ends on `budget` and every file is read. Every other input is default.
+      budget_usd: 10
     secrets:
       # Subscription token from `claude setup-token`; the engine uses it over ANTHROPIC_API_KEY when
       # both are set, and then reports cost as an API-equivalent estimate (ADR 0037).
